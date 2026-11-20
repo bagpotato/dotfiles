@@ -1,0 +1,30 @@
+add_newline = false
+format = "$directory([](fg:#ffc2d4 bg:#ffa8c5)$git_branch$git_status[](fg:#ffa8c5))${custom.dir_end}$cmd_duration\n$character"
+
+[character]
+error_symbol = "[♥](bold #e0457b)"
+success_symbol = "[♥](bold #ff7eb3)"
+
+[cmd_duration]
+format = " [$duration](fg:#d9a0b3)"
+min_time = 2000
+
+[custom.dir_end]
+command = "echo x"
+format = "[](fg:#ffc2d4)"
+when = "! git rev-parse --is-inside-work-tree >/dev/null 2>&1"
+
+[directory]
+format = "[ $path ]($style)"
+style = "fg:#5a2a3a bg:#ffc2d4"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[git_branch]
+format = "[ $symbol $branch ]($style)"
+style = "fg:#5a2a3a bg:#ffa8c5"
+symbol = ""
+
+[git_status]
+format = "[$all_status$ahead_behind ]($style)"
+style = "fg:#5a2a3a bg:#ffa8c5"

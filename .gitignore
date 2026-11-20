@@ -1,0 +1,8 @@
+*.bak
+*.log
+node_modules/
+.env
+*secret*
+*token*
+*.bak*
+config/micro/buffers/

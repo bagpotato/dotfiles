@@ -1,0 +1,4 @@
+{ ... }:
+{
+  programs.serpantinum.enable = true;
+}
