@@ -8,7 +8,7 @@
 ![Hyprland](https://img.shields.io/badge/Hyprland-Wayland-58E1FF?style=for-the-badge&logo=hyprland&logoColor=white)
 ![Flakes](https://img.shields.io/badge/Nix-Flakes-7EBAE4?style=for-the-badge&logo=nixos&logoColor=white)
 
-<img src="assets/desktop.png" alt="Mi escritorio" width="100%">
+<img src="assets/desktop.png" alt="My desktop" width="100%">
 
 </div>
 
@@ -19,33 +19,33 @@
 | | |
 |---|---|
 | **OS** | NixOS 26.11 (flake, `nixos-unstable`) |
-| **WM** | Hyprland (Wayland) con shell [serpantinum](https://github.com/ilyamiro/serpantinum) |
+| **WM** | Hyprland (Wayland) with the [serpantinum](https://github.com/ilyamiro/serpantinum) shell |
 | **Login** | SDDM |
 | **Terminal** | kitty |
 | **Prompt** | starship |
 | **Editor** | micro |
-| **Tema GTK** | WhiteSur-Dark + iconos WhiteSur + cursor WhiteSur |
+| **GTK theme** | WhiteSur-Dark + WhiteSur icons + WhiteSur cursor |
 | **Extras** | fastfetch, btop, cava, easyeffects, OBS |
 | **Hardware** | Ryzen 7 5700X · RTX 5070 · 32 GB RAM |
 
-## 📁 Estructura
+## 📁 Layout
 
 ```
 dotfiles/
-├── nixos/      # configuración declarativa del sistema
+├── nixos/      # declarative system configuration
 │   ├── flake.nix
 │   ├── configuration.nix
-│   ├── modules/    # nix, boot, cpu, nvidia, red, desktop, apps, ollama…
-│   └── home/       # Home Manager: hyprland, kitty, starship, btop, tema…
-├── config/     # ~/.config tal cual (hypr, kitty, cava, fastfetch…)
-└── home/       # dotfiles sueltos de ~ (.bashrc, .profile, .Xresources…)
+│   ├── modules/    # nix, boot, cpu, nvidia, network, desktop, apps, ollama…
+│   └── home/       # Home Manager: hyprland, kitty, starship, btop, theme…
+├── config/     # ~/.config as-is (hypr, kitty, cava, fastfetch…)
+└── home/       # loose dotfiles from ~ (.bashrc, .profile, .Xresources…)
 ```
 
-`nixos/` es la fuente de verdad: describe el sistema y genera buena parte de lo que hay en `config/`. Esa carpeta es una copia de lo que queda aplicado en `~/.config`.
+`nixos/` is the source of truth: it describes the system and generates much of what lives in `config/`. That folder is a copy of what ends up applied in `~/.config`.
 
-## 🚀 Uso
+## 🚀 Usage
 
-> ⚠️ `nixos/hardware-configuration.nix` es de **mi** máquina. Si lo pruebas en la tuya, genera el tuyo con `nixos-generate-config` y reemplázalo.
+> ⚠️ `nixos/hardware-configuration.nix` is specific to **my** machine. If you try this on yours, generate your own with `nixos-generate-config` and replace it.
 
 ```bash
 git clone https://github.com/bagpotato/dotfiles.git
@@ -53,15 +53,15 @@ cd dotfiles/nixos
 sudo nixos-rebuild switch --flake .#nixos
 ```
 
-Para actualizar las dependencias:
+To update the inputs:
 
 ```bash
 nix flake update
 sudo nixos-rebuild switch --flake .#nixos
 ```
 
-## 🎨 Créditos
+## 🎨 Credits
 
-- [serpantinum](https://github.com/ilyamiro/serpantinum) por ilyamiro
-- [WhiteSur](https://github.com/vinceliuice/WhiteSur-gtk-theme) por vinceliuice
-- [Hyprland](https://hyprland.org) y [Home Manager](https://github.com/nix-community/home-manager)
+- [serpantinum](https://github.com/ilyamiro/serpantinum) by ilyamiro
+- [WhiteSur](https://github.com/vinceliuice/WhiteSur-gtk-theme) by vinceliuice
+- [Hyprland](https://hyprland.org) and [Home Manager](https://github.com/nix-community/home-manager)
