@@ -10,6 +10,8 @@
 
 <img src="assets/desktop.png" alt="My desktop" width="100%">
 
+<img src="assets/desktop-2.png" alt="Wallpaper, bar and music player" width="100%">
+
 </div>
 
 ---
